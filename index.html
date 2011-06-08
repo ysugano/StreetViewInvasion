@@ -16,7 +16,7 @@
 		
 		function setScene(loc) {
 			switch(loc) {
-				case "MOMA":
+				case "MoMA":
 					SVI.setLocation(40.761694, -73.977551, 32, -3);
 					SVI.setFrame(9.5, 7.0, 21.5, -3.8, 20, 0, 0, Math.PI/3);
 					break;
@@ -75,14 +75,14 @@
 	</style>
 </head>
 
-<body onload="initialize();setScene('MOMA')">
+<body onload="initialize();setScene('MoMA')">
 	<div id="wrapper">
 		<div id="streetview" width="800px" height="450px"></div>
 		<div id="control">
 			<input type="text" id="img_path"  name="img_path" value="http://fffff.at/fuckflickr/data/FAT-LOGOS/fat_NBC_cooper_300-url.gif" />
 			<input type="submit" id="img_button" onclick="textureUpdate()" value="change image" />
 			<strong>Scene:</strong>
-			<input type="radio" name="location" onclick="setScene('MOMA')" checked />MOMA
+			<input type="radio" name="location" onclick="setScene('MoMA')" checked />MoMA
 			<input type="radio" name="location" onclick="setScene('Tate')" />Tate Britain
 			<input type="radio" name="location" onclick="setScene('Shibuya')" />Shibuya
 		</div>
