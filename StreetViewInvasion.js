@@ -102,10 +102,21 @@ StreetViewInvasion.prototype.setFrame = function(width, height, x, y, z, roll, p
 	this.frameBox.update();
 }
 
+StreetViewInvasion.prototype.setFrameDegree = function(width, height, x, y, z, roll, pitch, yaw) {
+	var rollrad = roll*(Math.PI/180);
+	var pitchrad = pitch*(Math.PI/180);
+	var yawrad = yaw*(Math.PI/180);
+	this.setFrame(width, height, x, y, z, rollrad, pitchrad, yawrad);
+}
+
 StreetViewInvasion.prototype.setTexture = function(img_path) {
 	this.textureCtx.clearRect(0, 0, this.textureCanvas.width, this.textureCanvas.height);
 	this.textureImg.src = img_path;
 }
+
+StreetViewInvasion.prototype.getPov = function() {
+	return this.streetview.getPov();
+}	
 
 StreetViewInvasion.prototype.convertPOV2Cam = function(pov) {
 	var theta = Math.PI*(90-pov.pitch)/180;
